@@ -1,0 +1,22 @@
+name: Generate
+on:
+  push:
+    branches:
+      - main
+jobs:
+  generate:
+    concurrency:
+      group: ${{ github.head_ref }}-generate
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.head_ref }}
+      - run: bash generate.sh
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: regenerate client builds"
+          branch: ${{ github.head_ref }}

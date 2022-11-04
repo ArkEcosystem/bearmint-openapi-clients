@@ -1,0 +1,3645 @@
+openapi: 3.0.2
+info:
+  title: Railway
+  version: 1.0.0
+servers:
+- url: http://railway.test
+paths:
+  /api/accounts:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[accounts]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_get_fields_accounts__parameter'
+        style: form
+      - description: "Filter the results where the [address] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[address]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [address] field is not equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[address.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [address] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[address.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [address] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[address.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [public_key] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[public_key]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [public_key] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[public_key.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [public_key] field is similar to\
+          \ the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[public_key.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [public_key] field is similar to\
+          \ the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[public_key.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [name] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[name]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [name] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[name.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [name] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[name.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [name] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[name.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [nonce] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[nonce]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [validator.address] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.address]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.address] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.address.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.address] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.address.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.address] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.address.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.publicKey] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.publicKey]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.publicKey] field is\
+          \ not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.publicKey.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.publicKey] field is\
+          \ similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.publicKey.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.publicKey] field is\
+          \ similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.publicKey.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.power] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.power]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.power] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[validator.power.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.power] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.power.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [validator.power] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[validator.power.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_accounts_get_200_response'
+          description: Success
+      summary: List accounts
+      x-accepts: application/json
+  /api/accounts/metadata:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[accounts_metadata]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_metadata_get_fields_accounts_metadata__parameter'
+        style: form
+      - description: "Filter the results where the [account_id] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[account_id]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [module] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[module]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is not equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[module.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[module.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[module.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[key]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[key.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case sensitive value."
+        explode: true
+        in: query
+        name: "filter[key.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case insensitive value."
+        explode: true
+        in: query
+        name: "filter[key.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[value]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[value.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[value.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[value.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_metadata_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_accounts_metadata_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_accounts_metadata_get_200_response'
+          description: Success
+      summary: List account metadata
+      x-accepts: application/json
+  /api/blocks:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[blocks]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_blocks_get_fields_blocks__parameter'
+        style: form
+      - description: "Filter the results where the [hash] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[hash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[hash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[hash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[hash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [height] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[height]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [header.version.block] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.version.block]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [header.chainId] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.chainId]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.chainId] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.chainId.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.chainId] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.chainId.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.chainId] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.chainId.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.height] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.height]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [header.time] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[header.time]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.time] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.time.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.time] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.time.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.time] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.time.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.hash] field\
+          \ is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.hash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.hash] field\
+          \ is not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.hash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.hash] field\
+          \ is similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.hash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.hash] field\
+          \ is similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.hash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.partSetHeader.total]\
+          \ field is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.partSetHeader.total]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.partSetHeader.hash]\
+          \ field is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.partSetHeader.hash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.partSetHeader.hash]\
+          \ field is not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.partSetHeader.hash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.partSetHeader.hash]\
+          \ field is similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.partSetHeader.hash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastBlockId.partSetHeader.hash]\
+          \ field is similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastBlockId.partSetHeader.hash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastCommitHash] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastCommitHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastCommitHash] field is\
+          \ not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastCommitHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastCommitHash] field is\
+          \ similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastCommitHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastCommitHash] field is\
+          \ similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastCommitHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.dataHash] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.dataHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.dataHash] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.dataHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.dataHash] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.dataHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.dataHash] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.dataHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.validatorsHash] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.validatorsHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.validatorsHash] field is\
+          \ not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.validatorsHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.validatorsHash] field is\
+          \ similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.validatorsHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.validatorsHash] field is\
+          \ similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.validatorsHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.nextValidatorsHash] field\
+          \ is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.nextValidatorsHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.nextValidatorsHash] field\
+          \ is not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.nextValidatorsHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.nextValidatorsHash] field\
+          \ is similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.nextValidatorsHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.nextValidatorsHash] field\
+          \ is similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.nextValidatorsHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.consensusHash] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.consensusHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.consensusHash] field is\
+          \ not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.consensusHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.consensusHash] field is\
+          \ similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.consensusHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.consensusHash] field is\
+          \ similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.consensusHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.appHash] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.appHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.appHash] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[header.appHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.appHash] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.appHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.appHash] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.appHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastResultsHash] field\
+          \ is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastResultsHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastResultsHash] field\
+          \ is not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.lastResultsHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastResultsHash] field\
+          \ is similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastResultsHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.lastResultsHash] field\
+          \ is similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.lastResultsHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.evidenceHash] field is\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.evidenceHash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.evidenceHash] field is\
+          \ not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.evidenceHash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.evidenceHash] field is\
+          \ similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.evidenceHash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.evidenceHash] field is\
+          \ similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.evidenceHash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.proposerAddress] field\
+          \ is equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.proposerAddress]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.proposerAddress] field\
+          \ is not equal to the given value."
+        explode: true
+        in: query
+        name: "filter[header.proposerAddress.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.proposerAddress] field\
+          \ is similar to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[header.proposerAddress.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [header.proposerAddress] field\
+          \ is similar to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[header.proposerAddress.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_blocks_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_blocks_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_blocks_get_200_response'
+          description: Success
+      summary: List blocks
+      x-accepts: application/json
+  /api/entities:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[entities]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_entities_get_fields_entities__parameter'
+        style: form
+      - description: "Filter the results where the [module] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[module]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is not equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[module.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[module.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [module] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[module.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [type] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[type]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [type] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[type.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [type] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[type.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [type] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[type.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[key]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[key.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case sensitive value."
+        explode: true
+        in: query
+        name: "filter[key.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case insensitive value."
+        explode: true
+        in: query
+        name: "filter[key.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[value]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[value.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[value.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[value.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_entities_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_entities_get_200_response'
+          description: Success
+      summary: List entities
+      x-accepts: application/json
+  /api/transactions:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[accounts]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_get_fields_accounts__parameter'
+        style: form
+      - description: "Filter the results where the [hash] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[hash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[hash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[hash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [hash] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[hash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [sender] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[sender]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [sender] field is not equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[sender.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [sender] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[sender.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [sender] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[sender.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [recipient] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[recipient]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [recipient] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[recipient.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [recipient] field is similar to\
+          \ the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[recipient.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [recipient] field is similar to\
+          \ the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[recipient.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [gas] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[gas]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [nonce] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[nonce]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [signature] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[signature]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [signature] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[signature.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [signature] field is similar to\
+          \ the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[signature.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [signature] field is similar to\
+          \ the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[signature.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [version] field is equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[version]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [version] field is not equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[version.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [version] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[version.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [version] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[version.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.handler] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[message.handler]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.handler] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[message.handler.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.handler] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[message.handler.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.handler] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[message.handler.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.version] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[message.version]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.version] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[message.version.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.version] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[message.version.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.version] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[message.version.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.network] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[message.network]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.network] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[message.network.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.network] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[message.network.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.network] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[message.network.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.content] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[message.content]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.content] field is not\
+          \ equal to the given value."
+        explode: true
+        in: query
+        name: "filter[message.content.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.content] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[message.content.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [message.content] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[message.content.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_transactions_get_200_response'
+          description: Success
+      summary: List transactions
+      x-accepts: application/json
+  /api/transactions/metadata:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[transaction_metadata]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_metadata_get_fields_transaction_metadata__parameter'
+        style: form
+      - description: "Filter the results where the [transaction_id] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[transaction_id]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [key] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[key]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[key.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case sensitive value."
+        explode: true
+        in: query
+        name: "filter[key.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [key] field is similar to the given\
+          \ case insensitive value."
+        explode: true
+        in: query
+        name: "filter[key.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is equal to the given\
+          \ value."
+        explode: true
+        in: query
+        name: "filter[value]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is not equal to the\
+          \ given value."
+        explode: true
+        in: query
+        name: "filter[value.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[value.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [value] field is similar to the\
+          \ given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[value.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_metadata_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_metadata_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_transactions_metadata_get_200_response'
+          description: Success
+      summary: List transaction metadata
+      x-accepts: application/json
+  /api/transactions/receipts:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[transaction_receipts]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_receipts_get_fields_transaction_receipts__parameter'
+        style: form
+      - description: "Filter the results where the [transaction_id] field is equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[transaction_id]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "Filter the results where the [block_hash] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[block_hash]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_hash] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[block_hash.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_hash] field is similar to\
+          \ the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[block_hash.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_hash] field is similar to\
+          \ the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[block_hash.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_number] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[block_number]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_number] field is not equal\
+          \ to the given value."
+        explode: true
+        in: query
+        name: "filter[block_number.neq]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_number] field is similar\
+          \ to the given case sensitive value."
+        explode: true
+        in: query
+        name: "filter[block_number.like]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Filter the results where the [block_number] field is similar\
+          \ to the given case insensitive value."
+        explode: true
+        in: query
+        name: "filter[block_number.ilike]"
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_metadata_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_transactions_receipts_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_transactions_receipts_get_200_response'
+          description: Success
+      summary: List transaction receipts
+      x-accepts: application/json
+  /api/validators/updates:
+    get:
+      parameters:
+      - description: Include the given fields in the response.
+        explode: true
+        in: query
+        name: "fields[block_number]"
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_validators_updates_get_fields_block_number__parameter'
+        style: form
+      - description: "Filter the results where the [block_number] field is equal to\
+          \ the given value."
+        explode: true
+        in: query
+        name: "filter[block_number]"
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: Include the given relationships.
+        explode: true
+        in: query
+        name: include
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_validators_updates_get_include_parameter'
+        style: form
+      - description: Sort the results by the given field and direction.
+        explode: true
+        in: query
+        name: sort
+        required: false
+        schema:
+          $ref: '#/components/schemas/_api_validators_updates_get_sort_parameter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_api_validators_updates_get_200_response'
+          description: Success
+      summary: List validator updates
+      x-accepts: application/json
+components:
+  schemas:
+    Block:
+      properties:
+        id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        hash:
+          description: The hash of the object.
+          example: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+          type: string
+        height:
+          description: The height of the object.
+          example: 1
+          type: integer
+        header:
+          description: The id of the object.
+          example:
+            version:
+              block: "11"
+            chainId: bearmint-testnet
+            height: "1"
+            time: 2022-10-09T02:12:21.361Z
+            lastBlockId:
+              partSetHeader:
+                hash: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+                partSetHeader:
+                  total: 1
+                  hash: FASNnBqJ2g7aBGvQFoPdLRXhO6C/lbl+VNqYM0GTgps=
+            lastCommitHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            dataHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            validatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+            nextValidatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+            consensusHash: BICRvH3cKD93v7+R1zxE2ljD34qcvIZ0Bdi389qtoi8=
+            appHash: mhfocNgApsnLxYU1Wv8EwT3idwzBW8iP76GDbRAJLU8=
+            lastResultsHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            evidenceHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            proposerAddress: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+          type: array
+        byzantine_validators:
+          description: The id of the object.
+          example: []
+          type: array
+        last_commit_info:
+          description: The id of the object.
+          example:
+            votes:
+            - validator:
+                address: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+                power: "1"
+              signedLastBlock: true
+          type: array
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    Entity:
+      properties:
+        id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        module:
+          description: The id of the object.
+          example: '@bearmint/bep-126'
+          type: string
+        type:
+          description: The id of the object.
+          example: collection
+          type: string
+        key:
+          description: The id of the object.
+          example: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+          type: string
+        value:
+          description: The id of the object.
+          example:
+            id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+            symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+            uriPrefix: https://bearmint.com/
+            uriSuffix: .json
+            tokens:
+            - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            accessControlList:
+              bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                permissions:
+                - 0
+                - 1
+                - 2
+            policies:
+            - name: '@bearmint/bep-145'
+            - type: 1
+              name: '@bearmint/bep-145'
+            - type: 2
+              name: '@bearmint/bep-145'
+          type: array
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    TransactionMetadata:
+      properties:
+        id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        transaction_id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        module:
+          description: The id of the object.
+          example: '@bearmint/bep-126'
+          type: string
+        key:
+          description: The id of the object.
+          example: collection
+          type: string
+        value:
+          description: The id of the object.
+          example: "{\"id\":\"47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535\"\
+            ,\"name\":\"41848b4314b2-43bf-819d-41ae21a4b763\",\"symbol\":\"d6b96b8b9677-4669-a0aa-8b74b545d611\"\
+            ,\"uriPrefix\":\"https://bearmint.com/\",\"uriSuffix\":\".json\",\"initialOwner\"\
+            :\"bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl\"\
+            ,\"currentOwner\":\"bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl\"\
+            ,\"accessControlList\":{\"bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl\"\
+            :{\"permissions\":[0,1,2]}},\"policies\":[{\"name\":\"@bearmint/bep-145\"\
+            },{\"type\":1,\"name\":\"@bearmint/bep-145\"},{\"type\":2,\"name\":\"\
+            @bearmint/bep-145\"}]}"
+          type: string
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    Account:
+      properties:
+        id:
+          description: The internal id of the object.
+          example: 1
+          type: integer
+        address:
+          description: The id of the object.
+          example: bear14v4nt0x5jryeagz2x6nad02pk9y6kjlwcav365l20emh8ht2q275ttfg8yq3ch43lpp8z22xyfxqxkpm0f7
+          type: string
+        public_key:
+          description: The id of the object.
+          example: ab2b35bcd490c99ea04a36a7d6bd41b149ab4beec7591d53ea7e7773dd6a02bd45ad2839011c5eb1f842712946224c03
+          type: string
+        name:
+          description: The id of the object.
+          example: johndoe
+          type: string
+        nonce:
+          description: The id of the object.
+          example: 1
+          type: integer
+        balances:
+          description: The id of the object.
+          example: "{\"BEAR\":\"9999999900000000\",\"FIRE\":\"9999999900000000\",\"\
+            GOLD\":\"9999999900000000\",\"SEED\":\"9999999900000000\"}"
+          type: string
+        locked_balances:
+          description: The id of the object.
+          example: "{\"BEAR\":\"0\",\"FIRE\":\"0\",\"GOLD\":\"0\",\"SEED\":\"0\"}"
+          type: string
+        stakes:
+          description: The id of the object.
+          example: "{\"johndoe\":\"9999999900000000\"}"
+          type: string
+        validator:
+          description: The id of the object.
+          example: "{\"address\":\"5c6b8588b0cccde01c43286b1e698519dd27ceee\",\"publicKey\"\
+            :\"fc795a9741081019b15ef5e34131e3d41bb59fccb99b6bae1419820fd300bfcf\"\
+            ,\"power\":\"1\"}"
+          type: string
+        metadata:
+          description: The id of the object.
+          example: "[]"
+          type: string
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    AccountMetadata:
+      properties:
+        id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        account_id:
+          description: The id of the object.
+          example: 3
+          type: integer
+        module:
+          description: The id of the object.
+          example: '@bearmint/bep-131'
+          type: string
+        key:
+          description: The id of the object.
+          example: inventory
+          type: string
+        value:
+          description: The id of the object.
+          example: "[\"befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4\"\
+            ]"
+          type: string
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    TransactionReceipt:
+      properties:
+        id:
+          description: The id of the object.
+          example: 1
+          type: integer
+        transaction_id:
+          description: The id of the object.
+          example: 2
+          type: integer
+        block_hash:
+          description: The id of the object.
+          example: Cda8V4lhwCNGlm2DIFKX7asRiHHD8XWtxNp/fKTFLPQ=
+          type: string
+        block_number:
+          description: The id of the object.
+          example: 5
+          type: integer
+        logs:
+          description: The id of the object.
+          example:
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: id
+              value:
+                id: 1
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: hash
+              value:
+                hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+          - event: OwnerChanged
+            args:
+              _modelKey: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+              _modelSubType: metadata
+              _modelType: account
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: inventory
+              value:
+              - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: token
+              value:
+                id: 1
+                hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                collection: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                owner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+          - event: MetadataUpdated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: collection
+              value:
+                id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+                symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+                uriPrefix: https://bearmint.com/
+                uriSuffix: .json
+                tokens:
+                - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                accessControlList:
+                  bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                    permissions:
+                    - 0
+                    - 1
+                    - 2
+                policies:
+                - name: '@bearmint/bep-145'
+                - type: 1
+                  name: '@bearmint/bep-145'
+                - type: 2
+                  name: '@bearmint/bep-145'
+          type: array
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    Transaction:
+      properties:
+        id:
+          description: The internal id of the object.
+          example: 1
+          type: integer
+        block_id:
+          description: The id of the block associated with the object.
+          example: 2
+          type: integer
+        hash:
+          description: The unique hash of the object.
+          example: 3a84b182c61b7cb0554a4134416998e86b9440e943ad085e2c21fccdc472d079
+          type: string
+        sender:
+          description: The public key of the recipient associated with the object.
+          example: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+          type: string
+        recipient:
+          description: The address of the recipient associated with the object.
+          example: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          type: string
+        gas:
+          description: The amount of gas of the object.
+          example: 100000000
+          type: integer
+        nonce:
+          description: The nonce of the account associated with the object.
+          example: 1
+          type: integer
+        signature:
+          description: The signature of the object.
+          example: 10c41c357456a96375f60dad79cbfbe834b5357c2c17653145e6a156fc6ce7391f77b9c4e17f26374cbfc1a1777d714a0fe415c2e79c8ed33768134ea3405bbe958563dfa3dfa87fc07e75f036d2debd32710718d4a7ff497db2b41e31b0bee2131367d58d8fc8d7e6503b9fb9ffd592ea4198fab4aa5d252b89dfafa5ee9cb606825b66a98b5077a9e904141d5924ea087a230884a6810c2c9f4e5ee4a7e49bf5cc43476f71bc9620fd9a3364779bacd05706838750b552c59286352a91224a
+          type: string
+        version:
+          description: The version of the object.
+          example: 1.0.0
+          type: string
+        message:
+          description: The message of the object.
+          example:
+            handler: '@bearmint/bep-126'
+            version: 0.0.0
+            network: 9a17e870d800a6c9cbc585355aff04c13de2770cc15bc88fefa1836d10092d4f
+            content: 0aab010a233431383438623433313462322d343362662d383139642d34316165323161346237363312236436623936623862393637372d343636392d613061612d3862373462353435643631311a1568747470733a2f2f626561726d696e742e636f6d2f22052e6a736f6e2a13121140626561726d696e742f6265702d3134352a150801121140626561726d696e742f6265702d3134352a150802121140626561726d696e742f6265702d313435
+          type: array
+        message_deserialized:
+          description: The deserialized message of the object.
+          example:
+            ops:
+            - name: 41848b4314b2-43bf-819d-41ae21a4b763
+              symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+              uriPrefix: https://bearmint.com/
+              uriSuffix: .json
+              policies:
+              - type: 0
+                name: '@bearmint/bep-145'
+              - type: 1
+                name: '@bearmint/bep-145'
+              - type: 2
+                name: '@bearmint/bep-145'
+          type: array
+        created_at:
+          description: The creation date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+        updated_at:
+          description: The updating date of the object.
+          example: 2022-10-09T02:12:24Z
+          format: date-time
+          type: string
+      type: object
+    _api_accounts_get_fields_accounts__parameter:
+      anyOf:
+      - description: Include the address field in the response.
+        title: address
+        type: string
+      - description: Include the balances field in the response.
+        title: balances
+        type: string
+      - description: Include the locked_balances field in the response.
+        title: locked_balances
+        type: string
+      - description: Include the metadata field in the response.
+        title: metadata
+        type: string
+      - description: Include the name field in the response.
+        title: name
+        type: string
+      - description: Include the nonce field in the response.
+        title: nonce
+        type: string
+      - description: Include the public_key field in the response.
+        title: public_key
+        type: string
+      - description: Include the stakes field in the response.
+        title: stakes
+        type: string
+      - description: Include the validator field in the response.
+        title: validator
+        type: string
+    _api_accounts_get_include_parameter:
+      anyOf:
+      - description: Include the metadata relationship in the response.
+        title: metadata
+        type: string
+    _api_accounts_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the address field in ascending direction.
+        title: address
+        type: string
+      - description: Sort the results by the address field in descending direction.
+        title: -address
+        type: string
+      - description: Sort the results by the name field in ascending direction.
+        title: name
+        type: string
+      - description: Sort the results by the name field in descending direction.
+        title: -name
+        type: string
+      - description: Sort the results by the public_key field in ascending direction.
+        title: public_key
+        type: string
+      - description: Sort the results by the public_key field in descending direction.
+        title: -public_key
+        type: string
+    _api_accounts_get_200_response:
+      example:
+        data:
+        - id: 1
+          address: bear14v4nt0x5jryeagz2x6nad02pk9y6kjlwcav365l20emh8ht2q275ttfg8yq3ch43lpp8z22xyfxqxkpm0f7
+          public_key: ab2b35bcd490c99ea04a36a7d6bd41b149ab4beec7591d53ea7e7773dd6a02bd45ad2839011c5eb1f842712946224c03
+          balances:
+            BEAR: "10000002200000000"
+          locked_balances:
+            BEAR: "0"
+          validator:
+            address: 5c6b8588b0cccde01c43286b1e698519dd27ceee
+            publicKey: fc795a9741081019b15ef5e34131e3d41bb59fccb99b6bae1419820fd300bfcf
+            power: "1"
+          metadata: []
+          created_at: 2022-10-09T02:12:24.000000Z
+          updated_at: 2022-10-09T02:12:36.000000Z
+        - id: 3
+          address: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          public_key: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+          nonce: 1
+          balances:
+            BEAR: "9999999900000000"
+          locked_balances:
+            BEAR: "0"
+          metadata: []
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        meta:
+          path: /api/accounts
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            address: bear14v4nt0x5jryeagz2x6nad02pk9y6kjlwcav365l20emh8ht2q275ttfg8yq3ch43lpp8z22xyfxqxkpm0f7
+            public_key: ab2b35bcd490c99ea04a36a7d6bd41b149ab4beec7591d53ea7e7773dd6a02bd45ad2839011c5eb1f842712946224c03
+            balances:
+              BEAR: "10000002200000000"
+            locked_balances:
+              BEAR: "0"
+            validator:
+              address: 5c6b8588b0cccde01c43286b1e698519dd27ceee
+              publicKey: fc795a9741081019b15ef5e34131e3d41bb59fccb99b6bae1419820fd300bfcf
+              power: "1"
+            metadata: []
+            created_at: 2022-10-09T02:12:24.000000Z
+            updated_at: 2022-10-09T02:12:36.000000Z
+          - id: 3
+            address: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            public_key: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+            nonce: 1
+            balances:
+              BEAR: "9999999900000000"
+            locked_balances:
+              BEAR: "0"
+            metadata: []
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          type: array
+        links:
+          example:
+            first: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/accounts?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/accounts
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_accounts_metadata_get_fields_accounts_metadata__parameter:
+      anyOf:
+      - description: Include the account_id field in the response.
+        title: account_id
+        type: string
+      - description: Include the key field in the response.
+        title: key
+        type: string
+      - description: Include the module field in the response.
+        title: module
+        type: string
+      - description: Include the value field in the response.
+        title: value
+        type: string
+    _api_accounts_metadata_get_include_parameter:
+      anyOf:
+      - description: Include the blocks relationship in the response.
+        title: blocks
+        type: string
+    _api_accounts_metadata_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the account_id field in ascending direction.
+        title: account_id
+        type: string
+      - description: Sort the results by the account_id field in descending direction.
+        title: -account_id
+        type: string
+      - description: Sort the results by the key field in ascending direction.
+        title: key
+        type: string
+      - description: Sort the results by the key field in descending direction.
+        title: -key
+        type: string
+      - description: Sort the results by the module field in ascending direction.
+        title: module
+        type: string
+      - description: Sort the results by the module field in descending direction.
+        title: -module
+        type: string
+      - description: Sort the results by the value field in ascending direction.
+        title: value
+        type: string
+      - description: Sort the results by the value field in descending direction.
+        title: -value
+        type: string
+    _api_accounts_metadata_get_200_response:
+      example:
+        data:
+        - id: 1
+          account_id: 3
+          module: '@bearmint/bep-131'
+          key: inventory
+          value:
+          - befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 2
+          account_id: 3
+          module: '@bearmint/bep-126'
+          key: inventory
+          value:
+          - 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        meta:
+          path: /api/accounts/metadata
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            account_id: 3
+            module: '@bearmint/bep-131'
+            key: inventory
+            value:
+            - befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 2
+            account_id: 3
+            module: '@bearmint/bep-126'
+            key: inventory
+            value:
+            - 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          type: array
+        links:
+          example:
+            first: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/accounts/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/accounts/metadata
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_blocks_get_fields_blocks__parameter:
+      anyOf:
+      - description: Include the byzantine_validators field in the response.
+        title: byzantine_validators
+        type: string
+      - description: Include the hash field in the response.
+        title: hash
+        type: string
+      - description: Include the header field in the response.
+        title: header
+        type: string
+      - description: Include the height field in the response.
+        title: height
+        type: string
+      - description: Include the last_commit_info field in the response.
+        title: last_commit_info
+        type: string
+    _api_blocks_get_include_parameter:
+      anyOf:
+      - description: Include the transactions relationship in the response.
+        title: transactions
+        type: string
+    _api_blocks_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the hash field in ascending direction.
+        title: hash
+        type: string
+      - description: Sort the results by the hash field in descending direction.
+        title: -hash
+        type: string
+      - description: Sort the results by the height field in ascending direction.
+        title: height
+        type: string
+      - description: Sort the results by the height field in descending direction.
+        title: -height
+        type: string
+    _api_blocks_get_200_response:
+      example:
+        data:
+        - id: 1
+          hash: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+          height: 1
+          header:
+            version:
+              block: "11"
+            chainId: bearmint-testnet
+            height: "1"
+            time: 2022-10-09T02:12:21.361Z
+            lastBlockId:
+              partSetHeader:
+                hash: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+                partSetHeader:
+                  total: 1
+                  hash: FASNnBqJ2g7aBGvQFoPdLRXhO6C/lbl+VNqYM0GTgps=
+            lastCommitHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            dataHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            validatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+            nextValidatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+            consensusHash: BICRvH3cKD93v7+R1zxE2ljD34qcvIZ0Bdi389qtoi8=
+            appHash: mhfocNgApsnLxYU1Wv8EwT3idwzBW8iP76GDbRAJLU8=
+            lastResultsHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            evidenceHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+            proposerAddress: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+          last_commit_info:
+            votes:
+            - validator:
+                address: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+                power: "1"
+              signedLastBlock: true
+          created_at: 2022-10-09T02:12:24.000000Z
+          updated_at: 2022-10-09T02:12:24.000000Z
+        meta:
+          path: /api/blocks
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            hash: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+            height: 1
+            header:
+              version:
+                block: "11"
+              chainId: bearmint-testnet
+              height: "1"
+              time: 2022-10-09T02:12:21.361Z
+              lastBlockId:
+                partSetHeader:
+                  hash: gm4XrAp6aJ/+oKAcnCoJwafhNJ0HD20DWg1epsEG6+o=
+                  partSetHeader:
+                    total: 1
+                    hash: FASNnBqJ2g7aBGvQFoPdLRXhO6C/lbl+VNqYM0GTgps=
+              lastCommitHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+              dataHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+              validatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+              nextValidatorsHash: ayn8KqIdjdg0za9pl/QPzJbOaSAkVIJWCXrctRWaR7s=
+              consensusHash: BICRvH3cKD93v7+R1zxE2ljD34qcvIZ0Bdi389qtoi8=
+              appHash: mhfocNgApsnLxYU1Wv8EwT3idwzBW8iP76GDbRAJLU8=
+              lastResultsHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+              evidenceHash: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+              proposerAddress: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+            last_commit_info:
+              votes:
+              - validator:
+                  address: XGuFiLDMzeAcQyhrHmmFGd0nzu4=
+                  power: "1"
+                signedLastBlock: true
+            created_at: 2022-10-09T02:12:24.000000Z
+            updated_at: 2022-10-09T02:12:24.000000Z
+          type: array
+        links:
+          example:
+            first: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/blocks?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/blocks
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_entities_get_fields_entities__parameter:
+      anyOf:
+      - description: Include the key field in the response.
+        title: key
+        type: string
+      - description: Include the module field in the response.
+        title: module
+        type: string
+      - description: Include the type field in the response.
+        title: type
+        type: string
+      - description: Include the value field in the response.
+        title: value
+        type: string
+    _api_entities_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the key field in ascending direction.
+        title: key
+        type: string
+      - description: Sort the results by the key field in descending direction.
+        title: -key
+        type: string
+      - description: Sort the results by the module field in ascending direction.
+        title: module
+        type: string
+      - description: Sort the results by the module field in descending direction.
+        title: -module
+        type: string
+      - description: Sort the results by the type field in ascending direction.
+        title: type
+        type: string
+      - description: Sort the results by the type field in descending direction.
+        title: -type
+        type: string
+    _api_entities_get_200_response:
+      example:
+        data:
+        - id: 1
+          module: '@bearmint/bep-126'
+          type: collection
+          key: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+          value:
+            id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+            symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+            uriPrefix: https://bearmint.com/
+            uriSuffix: .json
+            tokens:
+            - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            accessControlList:
+              bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                permissions:
+                - 0
+                - 1
+                - 2
+            policies:
+            - name: '@bearmint/bep-145'
+            - type: 1
+              name: '@bearmint/bep-145'
+            - type: 2
+              name: '@bearmint/bep-145'
+          created_at: 2022-10-12T03:02:06.000000Z
+          updated_at: 2022-10-12T03:02:06.000000Z
+        - id: 2
+          module: '@bearmint/bep-131'
+          type: token
+          key: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+          value:
+            id: 1
+            hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            collection: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            owner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+          created_at: 2022-10-12T03:02:06.000000Z
+          updated_at: 2022-10-12T03:02:06.000000Z
+        meta:
+          path: /api/transactions/metadata
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            module: '@bearmint/bep-126'
+            type: collection
+            key: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            value:
+              id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+              name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+              symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+              uriPrefix: https://bearmint.com/
+              uriSuffix: .json
+              tokens:
+              - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+              initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+              currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+              accessControlList:
+                bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                  permissions:
+                  - 0
+                  - 1
+                  - 2
+              policies:
+              - name: '@bearmint/bep-145'
+              - type: 1
+                name: '@bearmint/bep-145'
+              - type: 2
+                name: '@bearmint/bep-145'
+            created_at: 2022-10-12T03:02:06.000000Z
+            updated_at: 2022-10-12T03:02:06.000000Z
+          - id: 2
+            module: '@bearmint/bep-131'
+            type: token
+            key: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            value:
+              id: 1
+              hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+              collection: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+              owner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            created_at: 2022-10-12T03:02:06.000000Z
+            updated_at: 2022-10-12T03:02:06.000000Z
+          type: array
+        links:
+          example:
+            first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/transactions/metadata
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_transactions_get_fields_accounts__parameter:
+      anyOf:
+      - description: Include the gas field in the response.
+        title: gas
+        type: string
+      - description: Include the hash field in the response.
+        title: hash
+        type: string
+      - description: Include the message field in the response.
+        title: message
+        type: string
+      - description: Include the message_deserialized field in the response.
+        title: message_deserialized
+        type: string
+      - description: Include the nonce field in the response.
+        title: nonce
+        type: string
+      - description: Include the recipient field in the response.
+        title: recipient
+        type: string
+      - description: Include the sender field in the response.
+        title: sender
+        type: string
+      - description: Include the signature field in the response.
+        title: signature
+        type: string
+      - description: Include the version field in the response.
+        title: version
+        type: string
+    _api_transactions_get_include_parameter:
+      anyOf:
+      - description: Include the block relationship in the response.
+        title: block
+        type: string
+      - description: Include the metadata relationship in the response.
+        title: metadata
+        type: string
+      - description: Include the receipt relationship in the response.
+        title: receipt
+        type: string
+      - description: Include the recipient relationship in the response.
+        title: recipient
+        type: string
+      - description: Include the sender relationship in the response.
+        title: sender
+        type: string
+    _api_transactions_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the gas field in ascending direction.
+        title: gas
+        type: string
+      - description: Sort the results by the gas field in descending direction.
+        title: -gas
+        type: string
+      - description: Sort the results by the nonce field in ascending direction.
+        title: nonce
+        type: string
+      - description: Sort the results by the nonce field in descending direction.
+        title: -nonce
+        type: string
+      - description: Sort the results by the recipient field in ascending direction.
+        title: recipient
+        type: string
+      - description: Sort the results by the recipient field in descending direction.
+        title: -recipient
+        type: string
+      - description: Sort the results by the sender field in ascending direction.
+        title: sender
+        type: string
+      - description: Sort the results by the sender field in descending direction.
+        title: -sender
+        type: string
+      - description: Sort the results by the version field in ascending direction.
+        title: version
+        type: string
+      - description: Sort the results by the version field in descending direction.
+        title: -version
+        type: string
+    _api_transactions_get_200_response:
+      example:
+        data:
+        - id: 1
+          block_id: 2
+          hash: 3a84b182c61b7cb0554a4134416998e86b9440e943ad085e2c21fccdc472d079
+          sender: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+          recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          gas: 100000000
+          nonce: 1
+          signature: 10c41c357456a96375f60dad79cbfbe834b5357c2c17653145e6a156fc6ce7391f77b9c4e17f26374cbfc1a1777d714a0fe415c2e79c8ed33768134ea3405bbe958563dfa3dfa87fc07e75f036d2debd32710718d4a7ff497db2b41e31b0bee2131367d58d8fc8d7e6503b9fb9ffd592ea4198fab4aa5d252b89dfafa5ee9cb606825b66a98b5077a9e904141d5924ea087a230884a6810c2c9f4e5ee4a7e49bf5cc43476f71bc9620fd9a3364779bacd05706838750b552c59286352a91224a
+          version: 1.0.0
+          message:
+            handler: '@bearmint/bep-126'
+            version: 0.0.0
+            network: 9a17e870d800a6c9cbc585355aff04c13de2770cc15bc88fefa1836d10092d4f
+            content: 0aab010a233431383438623433313462322d343362662d383139642d34316165323161346237363312236436623936623862393637372d343636392d613061612d3862373462353435643631311a1568747470733a2f2f626561726d696e742e636f6d2f22052e6a736f6e2a13121140626561726d696e742f6265702d3134352a150801121140626561726d696e742f6265702d3134352a150802121140626561726d696e742f6265702d313435
+          message_deserialized:
+            ops:
+            - name: 41848b4314b2-43bf-819d-41ae21a4b763
+              symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+              uriPrefix: https://bearmint.com/
+              uriSuffix: .json
+              policies:
+              - type: 0
+                name: '@bearmint/bep-145'
+              - type: 1
+                name: '@bearmint/bep-145'
+              - type: 2
+                name: '@bearmint/bep-145'
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 2
+          block_id: 4
+          hash: b0cb57687f8ccb8e2f430064824a2f954ab59e161b8f7aa81f84dbdf1aa034f3
+          sender: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+          recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          gas: 100000000
+          nonce: 2
+          signature: 08f031252e5027f7682c2de796233f8f863b1828195451cec37a38dab7433d685ad0a7644215bdb6d26477e19d6e01260e0ac634a6fb27f1665009ad0943a31ff528d67625d94d485c474b24e4bf8cf732eaf39958e4892f599437e3fe108258162443869843474df1938937ad6e94392d8cc0d3bba6a62bf7285340d955ad1b88d59e5f0eaa312dd3f65658d6bb48490072b2801790f98f858d44ecac87afd3a721b158010df129734467d3eefb27b95f8ebadfd3c5c4d1d4ccaa45060b06a6
+          version: 1.0.0
+          message:
+            handler: '@bearmint/bep-131'
+            version: 0.0.0
+            network: 9a17e870d800a6c9cbc585355aff04c13de2770cc15bc88fefa1836d10092d4f
+            content: 0a9c010a4034376265343236666536333733636631303436333661333865353766383236323463623434623633383965326539353438383763346136626539393231353335125862656172316a7276737a743333386371796138766e3467716a397a647579396b6372367432347439336577713461736b7038326d66676e376765656b656e6464796771616c716b3733653938746a36723475396d77656a6c
+          message_deserialized:
+            ops:
+            - hash: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+              recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        meta:
+          path: /api/transactions
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            block_id: 2
+            hash: 3a84b182c61b7cb0554a4134416998e86b9440e943ad085e2c21fccdc472d079
+            sender: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+            recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            gas: 100000000
+            nonce: 1
+            signature: 10c41c357456a96375f60dad79cbfbe834b5357c2c17653145e6a156fc6ce7391f77b9c4e17f26374cbfc1a1777d714a0fe415c2e79c8ed33768134ea3405bbe958563dfa3dfa87fc07e75f036d2debd32710718d4a7ff497db2b41e31b0bee2131367d58d8fc8d7e6503b9fb9ffd592ea4198fab4aa5d252b89dfafa5ee9cb606825b66a98b5077a9e904141d5924ea087a230884a6810c2c9f4e5ee4a7e49bf5cc43476f71bc9620fd9a3364779bacd05706838750b552c59286352a91224a
+            version: 1.0.0
+            message:
+              handler: '@bearmint/bep-126'
+              version: 0.0.0
+              network: 9a17e870d800a6c9cbc585355aff04c13de2770cc15bc88fefa1836d10092d4f
+              content: 0aab010a233431383438623433313462322d343362662d383139642d34316165323161346237363312236436623936623862393637372d343636392d613061612d3862373462353435643631311a1568747470733a2f2f626561726d696e742e636f6d2f22052e6a736f6e2a13121140626561726d696e742f6265702d3134352a150801121140626561726d696e742f6265702d3134352a150802121140626561726d696e742f6265702d313435
+            message_deserialized:
+              ops:
+              - name: 41848b4314b2-43bf-819d-41ae21a4b763
+                symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+                uriPrefix: https://bearmint.com/
+                uriSuffix: .json
+                policies:
+                - type: 0
+                  name: '@bearmint/bep-145'
+                - type: 1
+                  name: '@bearmint/bep-145'
+                - type: 2
+                  name: '@bearmint/bep-145'
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 2
+            block_id: 4
+            hash: b0cb57687f8ccb8e2f430064824a2f954ab59e161b8f7aa81f84dbdf1aa034f3
+            sender: 90d9012e313e004e9d93aa012289bc216d81e96aaacb1cb815ec2c13ab6944fc8ce6d99b5a4403bf05bd1c94eb96875e
+            recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            gas: 100000000
+            nonce: 2
+            signature: 08f031252e5027f7682c2de796233f8f863b1828195451cec37a38dab7433d685ad0a7644215bdb6d26477e19d6e01260e0ac634a6fb27f1665009ad0943a31ff528d67625d94d485c474b24e4bf8cf732eaf39958e4892f599437e3fe108258162443869843474df1938937ad6e94392d8cc0d3bba6a62bf7285340d955ad1b88d59e5f0eaa312dd3f65658d6bb48490072b2801790f98f858d44ecac87afd3a721b158010df129734467d3eefb27b95f8ebadfd3c5c4d1d4ccaa45060b06a6
+            version: 1.0.0
+            message:
+              handler: '@bearmint/bep-131'
+              version: 0.0.0
+              network: 9a17e870d800a6c9cbc585355aff04c13de2770cc15bc88fefa1836d10092d4f
+              content: 0a9c010a4034376265343236666536333733636631303436333661333865353766383236323463623434623633383965326539353438383763346136626539393231353335125862656172316a7276737a743333386371796138766e3467716a397a647579396b6372367432347439336577713461736b7038326d66676e376765656b656e6464796771616c716b3733653938746a36723475396d77656a6c
+            message_deserialized:
+              ops:
+              - hash: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+                recipient: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          type: array
+        links:
+          example:
+            first: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/transactions?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/transactions
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_transactions_metadata_get_fields_transaction_metadata__parameter:
+      anyOf:
+      - description: Include the key field in the response.
+        title: key
+        type: string
+      - description: Include the transaction_id field in the response.
+        title: transaction_id
+        type: string
+      - description: Include the value field in the response.
+        title: value
+        type: string
+    _api_transactions_metadata_get_include_parameter:
+      anyOf:
+      - description: Include the transaction relationship in the response.
+        title: transaction
+        type: string
+    _api_transactions_metadata_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the key field in ascending direction.
+        title: key
+        type: string
+      - description: Sort the results by the key field in descending direction.
+        title: -key
+        type: string
+      - description: Sort the results by the module field in ascending direction.
+        title: module
+        type: string
+      - description: Sort the results by the module field in descending direction.
+        title: -module
+        type: string
+      - description: Sort the results by the transaction_id field in ascending direction.
+        title: transaction_id
+        type: string
+      - description: Sort the results by the transaction_id field in descending direction.
+        title: -transaction_id
+        type: string
+      - description: Sort the results by the value field in ascending direction.
+        title: value
+        type: string
+      - description: Sort the results by the value field in descending direction.
+        title: -value
+        type: string
+    _api_transactions_metadata_get_200_response:
+      example:
+        data:
+        - id: 1
+          transaction_id: 1
+          module: '@bearmint/bep-126'
+          key: id
+          value:
+            id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 2
+          transaction_id: 1
+          module: '@bearmint/bep-126'
+          key: collection
+          value:
+            id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+            name: 41848b4314b2-43bf-819d-41ae21a4b763
+            symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+            uriPrefix: https://bearmint.com/
+            uriSuffix: .json
+            initialOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            currentOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            accessControlList:
+              bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl:
+                permissions:
+                - 0
+                - 1
+                - 2
+            policies:
+            - name: '@bearmint/bep-145'
+            - type: 1
+              name: '@bearmint/bep-145'
+            - type: 2
+              name: '@bearmint/bep-145'
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 3
+          transaction_id: 2
+          module: '@bearmint/bep-126'
+          key: collection
+          value:
+            id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+            name: 41848b4314b2-43bf-819d-41ae21a4b763
+            symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+            uriPrefix: https://bearmint.com/
+            uriSuffix: .json
+            tokens:
+            - befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+            initialOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            currentOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            accessControlList:
+              bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl:
+                permissions:
+                - 0
+                - 1
+                - 2
+            policies:
+            - name: '@bearmint/bep-145'
+            - type: 1
+              name: '@bearmint/bep-145'
+            - type: 2
+              name: '@bearmint/bep-145'
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 4
+          transaction_id: 2
+          module: '@bearmint/bep-131'
+          key: id
+          value:
+            id: 1
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 5
+          transaction_id: 2
+          module: '@bearmint/bep-131'
+          key: token
+          value:
+            id: 1
+            hash: befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+            collection: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+            owner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        - id: 6
+          transaction_id: 2
+          module: '@bearmint/bep-131'
+          key: hash
+          value:
+            hash: befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+          created_at: 2022-10-09T02:12:30.000000Z
+          updated_at: 2022-10-09T02:12:30.000000Z
+        meta:
+          path: /api/transactions/metadata
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 1
+            transaction_id: 1
+            module: '@bearmint/bep-126'
+            key: id
+            value:
+              id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 2
+            transaction_id: 1
+            module: '@bearmint/bep-126'
+            key: collection
+            value:
+              id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+              name: 41848b4314b2-43bf-819d-41ae21a4b763
+              symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+              uriPrefix: https://bearmint.com/
+              uriSuffix: .json
+              initialOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+              currentOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+              accessControlList:
+                bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl:
+                  permissions:
+                  - 0
+                  - 1
+                  - 2
+              policies:
+              - name: '@bearmint/bep-145'
+              - type: 1
+                name: '@bearmint/bep-145'
+              - type: 2
+                name: '@bearmint/bep-145'
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 3
+            transaction_id: 2
+            module: '@bearmint/bep-126'
+            key: collection
+            value:
+              id: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+              name: 41848b4314b2-43bf-819d-41ae21a4b763
+              symbol: d6b96b8b9677-4669-a0aa-8b74b545d611
+              uriPrefix: https://bearmint.com/
+              uriSuffix: .json
+              tokens:
+              - befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+              initialOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+              currentOwner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+              accessControlList:
+                bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl:
+                  permissions:
+                  - 0
+                  - 1
+                  - 2
+              policies:
+              - name: '@bearmint/bep-145'
+              - type: 1
+                name: '@bearmint/bep-145'
+              - type: 2
+                name: '@bearmint/bep-145'
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 4
+            transaction_id: 2
+            module: '@bearmint/bep-131'
+            key: id
+            value:
+              id: 1
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 5
+            transaction_id: 2
+            module: '@bearmint/bep-131'
+            key: token
+            value:
+              id: 1
+              hash: befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+              collection: 47be426fe6373cf104636a38e57f82624cb44b6389e2e954887c4a6be9921535
+              owner: bear1jrvszt338cqya8vn4gqj9zduy9kcr6t24t93ewq4askp82mfgn7geekenddygqalqk73e98tj6r4u9mwejl
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          - id: 6
+            transaction_id: 2
+            module: '@bearmint/bep-131'
+            key: hash
+            value:
+              hash: befaffab63b43b4689f2273b32c969abcb9b03af7902d523181e2be7b5b521f4
+            created_at: 2022-10-09T02:12:30.000000Z
+            updated_at: 2022-10-09T02:12:30.000000Z
+          type: array
+        links:
+          example:
+            first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/transactions/metadata
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_transactions_receipts_get_fields_transaction_receipts__parameter:
+      anyOf:
+      - description: Include the block_hash field in the response.
+        title: block_hash
+        type: string
+      - description: Include the block_number field in the response.
+        title: block_number
+        type: string
+      - description: Include the logs field in the response.
+        title: logs
+        type: string
+      - description: Include the transaction_id field in the response.
+        title: transaction_id
+        type: string
+    _api_transactions_receipts_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the block_hash field in ascending direction.
+        title: block_hash
+        type: string
+      - description: Sort the results by the block_hash field in descending direction.
+        title: -block_hash
+        type: string
+      - description: Sort the results by the block_number field in ascending direction.
+        title: block_number
+        type: string
+      - description: Sort the results by the block_number field in descending direction.
+        title: -block_number
+        type: string
+      - description: Sort the results by the transaction_id field in ascending direction.
+        title: transaction_id
+        type: string
+      - description: Sort the results by the transaction_id field in descending direction.
+        title: -transaction_id
+        type: string
+    _api_transactions_receipts_get_200_response:
+      example:
+        data:
+        - id: 2
+          transaction_id: 2
+          block_hash: Cda8V4lhwCNGlm2DIFKX7asRiHHD8XWtxNp/fKTFLPQ=
+          block_number: "5"
+          logs:
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: id
+              value:
+                id: 1
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: hash
+              value:
+                hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+          - event: OwnerChanged
+            args:
+              _modelKey: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+              _modelSubType: metadata
+              _modelType: account
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: inventory
+              value:
+              - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+          - event: MetadataCreated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-131'
+              _opIndex: "0"
+              key: token
+              value:
+                id: 1
+                hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                collection: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                owner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+          - event: MetadataUpdated
+            args:
+              _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: collection
+              value:
+                id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+                symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+                uriPrefix: https://bearmint.com/
+                uriSuffix: .json
+                tokens:
+                - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                accessControlList:
+                  bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                    permissions:
+                    - 0
+                    - 1
+                    - 2
+                policies:
+                - name: '@bearmint/bep-145'
+                - type: 1
+                  name: '@bearmint/bep-145'
+                - type: 2
+                  name: '@bearmint/bep-145'
+          created_at: 2022-10-12T03:02:06.000000Z
+          updated_at: 2022-10-12T03:02:06.000000Z
+        - id: 1
+          transaction_id: 1
+          block_hash: yB2meGvB9OMYaJ10wveFees/ZdtJyWqWJBsARnjk/uw=
+          block_number: "4"
+          logs:
+          - event: MetadataCreated
+            args:
+              _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: '@bearmint/bep-126/n/fc3296116a5b-42f8-8c41-5b51dd3813cb'
+              value: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606/0
+          - event: MetadataCreated
+            args:
+              _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: '@bearmint/bep-126/s/f4af54f78243-4cd9-8ef5-09db6190c69a'
+              value: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606/0
+          - event: OwnerChanged
+            args:
+              _modelKey: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+              _modelSubType: metadata
+              _modelType: account
+              _module: '@bearmint/bep-126'
+              key: inventory
+              value:
+              - 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+          - event: MetadataCreated
+            args:
+              _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: collection
+              value:
+                id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+                symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+                uriPrefix: https://bearmint.com/
+                uriSuffix: .json
+                initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                accessControlList:
+                  bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                    permissions:
+                    - 0
+                    - 1
+                    - 2
+                policies:
+                - name: '@bearmint/bep-145'
+                - type: 1
+                  name: '@bearmint/bep-145'
+                - type: 2
+                  name: '@bearmint/bep-145'
+          - event: MetadataCreated
+            args:
+              _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+              _modelSubType: metadata
+              _modelType: tx
+              _module: '@bearmint/bep-126'
+              key: id
+              value:
+                id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+          created_at: 2022-10-12T03:02:00.000000Z
+          updated_at: 2022-10-12T03:02:00.000000Z
+        meta:
+          path: /api/transactions/metadata
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example:
+          - id: 2
+            transaction_id: 2
+            block_hash: Cda8V4lhwCNGlm2DIFKX7asRiHHD8XWtxNp/fKTFLPQ=
+            block_number: "5"
+            logs:
+            - event: MetadataCreated
+              args:
+                _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-131'
+                _opIndex: "0"
+                key: id
+                value:
+                  id: 1
+            - event: MetadataCreated
+              args:
+                _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-131'
+                _opIndex: "0"
+                key: hash
+                value:
+                  hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            - event: OwnerChanged
+              args:
+                _modelKey: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                _modelSubType: metadata
+                _modelType: account
+                _module: '@bearmint/bep-131'
+                _opIndex: "0"
+                key: inventory
+                value:
+                - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+            - event: MetadataCreated
+              args:
+                _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-131'
+                _opIndex: "0"
+                key: token
+                value:
+                  id: 1
+                  hash: 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                  collection: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                  owner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+            - event: MetadataUpdated
+              args:
+                _modelKey: ec667f03c0d3d929d09a80c947dbce6ac3b65193fca08c3543b1a4b0a27bd03b
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-126'
+                key: collection
+                value:
+                  id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                  name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+                  symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+                  uriPrefix: https://bearmint.com/
+                  uriSuffix: .json
+                  tokens:
+                  - 3d262af20ff9158e8194eadb43a06609dd82dfc3d515eb539cb3e945655538cb
+                  initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                  currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                  accessControlList:
+                    bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                      permissions:
+                      - 0
+                      - 1
+                      - 2
+                  policies:
+                  - name: '@bearmint/bep-145'
+                  - type: 1
+                    name: '@bearmint/bep-145'
+                  - type: 2
+                    name: '@bearmint/bep-145'
+            created_at: 2022-10-12T03:02:06.000000Z
+            updated_at: 2022-10-12T03:02:06.000000Z
+          - id: 1
+            transaction_id: 1
+            block_hash: yB2meGvB9OMYaJ10wveFees/ZdtJyWqWJBsARnjk/uw=
+            block_number: "4"
+            logs:
+            - event: MetadataCreated
+              args:
+                _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-126'
+                key: '@bearmint/bep-126/n/fc3296116a5b-42f8-8c41-5b51dd3813cb'
+                value: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606/0
+            - event: MetadataCreated
+              args:
+                _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-126'
+                key: '@bearmint/bep-126/s/f4af54f78243-4cd9-8ef5-09db6190c69a'
+                value: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606/0
+            - event: OwnerChanged
+              args:
+                _modelKey: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                _modelSubType: metadata
+                _modelType: account
+                _module: '@bearmint/bep-126'
+                key: inventory
+                value:
+                - 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            - event: MetadataCreated
+              args:
+                _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-126'
+                key: collection
+                value:
+                  id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+                  name: fc3296116a5b-42f8-8c41-5b51dd3813cb
+                  symbol: f4af54f78243-4cd9-8ef5-09db6190c69a
+                  uriPrefix: https://bearmint.com/
+                  uriSuffix: .json
+                  initialOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                  currentOwner: bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt
+                  accessControlList:
+                    bear1j4vvs55nfkjffkewadw5atzyqsmmtvtj2rcwjcvk2qfc85k5w52j545nzgez4hsw67h9vzyu958rj3g20zt:
+                      permissions:
+                      - 0
+                      - 1
+                      - 2
+                  policies:
+                  - name: '@bearmint/bep-145'
+                  - type: 1
+                    name: '@bearmint/bep-145'
+                  - type: 2
+                    name: '@bearmint/bep-145'
+            - event: MetadataCreated
+              args:
+                _modelKey: e45e3952fbccfd8cc52bec74a1bef55c1c0427520d7c5e4f8fb332b5ce2d0606
+                _modelSubType: metadata
+                _modelType: tx
+                _module: '@bearmint/bep-126'
+                key: id
+                value:
+                  id: 51e24f910c4b539280a8e0c8e3fc8119312d236aea36428165ab11f2c1ce2f18
+            created_at: 2022-10-12T03:02:00.000000Z
+            updated_at: 2022-10-12T03:02:00.000000Z
+          type: array
+        links:
+          example:
+            first: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/transactions/metadata?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/transactions/metadata
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+    _api_validators_updates_get_fields_block_number__parameter:
+      anyOf:
+      - description: Include the value field in the response.
+        title: value
+        type: string
+    _api_validators_updates_get_include_parameter:
+      anyOf:
+      - description: Include the block relationship in the response.
+        title: block
+        type: string
+    _api_validators_updates_get_sort_parameter:
+      anyOf:
+      - description: Sort the results by the block_number field in ascending direction.
+        title: block_number
+        type: string
+      - description: Sort the results by the block_number field in descending direction.
+        title: -block_number
+        type: string
+    _api_validators_updates_get_200_response:
+      example:
+        data: []
+        meta:
+          path: /api/validators/updates
+          per_page: 100
+          next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+        links:
+          first: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          last: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          prev: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          next: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      properties:
+        data:
+          example: []
+          type: array
+        links:
+          example:
+            first: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            last: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+            next: /api/validators/updates?page%5Bcursor%5D=eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+          type: object
+        meta:
+          example:
+            path: /api/validators/updates
+            per_page: 100
+            next_cursor: eyJoZWlnaHQiOjExLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+            prev_cursor: eyJoZWlnaHQiOjEwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOmZhbHNlfQ
+          type: object
+      type: object
+
