@@ -7,3 +7,7 @@ This repository contains auto-generated API Clients based on the Railway OpenAPI
 ## Build
 
 This repository can be build with the OpenAPI Generator CLI which you can find at https://openapi-generator.tech/docs/installation/. After you've installed the CLI you can run `bash generate.sh` to generate clients for different programming languages.
+
+## License
+
+Bearmint OpenAPI Clients is open-source software licensed under the [MIT License](https://github.com/ArkEcosystem/bearmint-openapi-clients/blob/main/LICENSE).
